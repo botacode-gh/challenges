@@ -2,6 +2,7 @@ import { getRocket } from "./rocket.js";
 
 export function liftoff() {
   const rocket = getRocket();
+  console.log(`${rocket.id} lifting off...`);
 
   if (rocket.countdown !== rocket.requiredCountdown) {
     throw new Error("Cannot lift off without the correct countdown sequence.");
@@ -12,4 +13,5 @@ export function liftoff() {
   }
 
   rocket.liftoff = true;
+  console.log(`${rocket.id} lifted off`);
 }

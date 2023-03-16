@@ -1,6 +1,8 @@
 import { getRocket } from "./rocket.js";
 
 export function deployPayload() {
+  console.log("Deploying payload...");
+
   const rocket = getRocket();
   if (!rocket.liftoff) {
     throw new Error("Cannot deploy payload while still on ground.");
@@ -13,4 +15,5 @@ export function deployPayload() {
   }
 
   rocket.payloadDeployed = true;
+  console.log("Payload deployed");
 }
